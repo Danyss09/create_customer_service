@@ -1,13 +1,14 @@
 from flask import Flask
 from controllers.customer_controller import customer_bp
 from dotenv import load_dotenv
+from flask_cors import CORS
 import os
 
 # Cargar variables desde .env
 load_dotenv()
 
 app = Flask(__name__)
-
+CORS(app)
 # Register Blueprint
 app.register_blueprint(customer_bp)
 
